@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     List<Fish> fishList;
     int positionSelected;
     FishFirebaseData fishDataSource;
+    DatabaseReference fishDbRef;
+    Fish fishSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,29 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupFirebaseDataChange() {
         // ToDo - Add code here to update the listview with data from Firebase
+        fishDataSource = new FishFirebaseData();
+
+        //Retrieves DatabaseRef from open method of fishDataSource
+        fishDbRef = fishDataSource.open();
+        fishDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                fishList = fishDataSource.getAllFish(dataSnapshot);
+
+                //pass list to FishAdapter
+                fishAdapter = new FishAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice,
+                        fishList);
+
+                //set adapter
+                listViewFish.setAdapter(fishAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void setupListView() {
