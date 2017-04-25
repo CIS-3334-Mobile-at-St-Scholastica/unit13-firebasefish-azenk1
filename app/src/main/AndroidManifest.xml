@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddFishActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

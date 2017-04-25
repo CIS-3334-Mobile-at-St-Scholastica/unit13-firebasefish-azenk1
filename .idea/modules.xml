@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FishLocatorFirebaseStart.iml" filepath="$PROJECT_DIR$/FishLocatorFirebaseStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/unit13-firebasefish-azenk1.iml" filepath="$PROJECT_DIR$/unit13-firebasefish-azenk1.iml" />
     </modules>
   </component>
